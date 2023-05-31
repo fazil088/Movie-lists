@@ -2,20 +2,29 @@ import React,{useState,useEffect} from 'react'
 import './Banner.css'
 import axios from '../../axios'
 import { imageUrl } from '../../Constants/constants'
-import { popular } from '../../MovieLinks'
+import { trending } from '../../MovieLinks'
 
 
 
 function Banner() {
     const [movies,setMovies] = useState()
     useEffect(()=>{
-        axios.get(popular).then((response)=>{
-            setMovies(response.data.results[Math.floor(Math.random()*response.data.results.length)])
-        }).catch(err=>{
-            console.log(err)
-        })
+      async function bannerUpdate(){
+        try{
+          const response = await axios.get(trending)
+          const randomMovies = response.data.results[Math.floor(Math.random()*response.data.results.length)]
+          setMovies(randomMovies)
+        }
+          catch(err){
+          console.log(err)
+        }
+      }
+      bannerUpdate();
+      const interval = setInterval(bannerUpdate,60000)
+      return ()=> clearInterval(interval)
     },[])
 
+    
   return (
     <div 
     style={{backgroundImage: `url(${movies ? imageUrl+movies.backdrop_path : ""})`}}
