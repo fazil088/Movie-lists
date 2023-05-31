@@ -1,0 +1,10 @@
+.rowMovies{
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 1rem;
+}
+
+.rowImg{
+    border: 2px solid red;
+    height: 200px;
+}
