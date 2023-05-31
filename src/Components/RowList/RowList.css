@@ -1,10 +1,19 @@
 .rowMovies{
-    border: 2px solid #fff;
     color: #fff;
     padding: 1rem;
 }
+.rowList{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.rowList::-webkit-scrollbar{
+    display: none;
+}
 
 .rowImg{
-    border: 2px solid red;
-    height: 200px;
+    height: 250px;
+    width: 250px;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }

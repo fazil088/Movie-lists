@@ -9,7 +9,7 @@ function App() {
     <div>
       {/* <Navbar/> */}
       <Banner/>
-      <RowList/>
+      <RowList title='Top Rated'/>
     </div>
   );
 }
