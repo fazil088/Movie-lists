@@ -1,12 +1,15 @@
 import React,{useState,useEffect} from 'react'
 import './Banner.css'
 import axios from '../../axios'
-import { api_key,imageUrl } from '../../Constants/constants'
+import { imageUrl } from '../../Constants/constants'
+import { popular } from '../../MovieLinks'
+
+
 
 function Banner() {
     const [movies,setMovies] = useState()
     useEffect(()=>{
-        axios.get(`movie/popular?api_key=${api_key}`).then((response)=>{
+        axios.get(popular).then((response)=>{
             setMovies(response.data.results[Math.floor(Math.random()*response.data.results.length)])
         }).catch(err=>{
             console.log(err)
@@ -28,5 +31,6 @@ function Banner() {
     </div>
   )
 }
+
 
 export default Banner

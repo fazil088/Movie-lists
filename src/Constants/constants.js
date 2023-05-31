@@ -7,7 +7,7 @@ export const imageUrl = "https://image.tmdb.org/t/p/original";
 
 export const language = 'en-US';
 
-export const page = '1';
+export const page = `${Math.ceil(Math.random()*5)}`;
 
 export const sort_by = 'created_at.asc';
 
