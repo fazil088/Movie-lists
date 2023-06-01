@@ -1,7 +1,7 @@
 {
   "name": "sample",
   "version": "0.1.0",
-  "homepage": "./",
+  "homepage": " https://fazil088.github.io/Movie-DataBase/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
