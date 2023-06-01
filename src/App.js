@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-// import Navbar from './Components/Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import Banner from './Components/Banner/Banner'
 import RowList from './Components/RowList/RowList';
-import { topRated,upComing } from './MovieLinks';
+import { topRated,upComing,popular } from './MovieLinks';
 
 function App() {
   return (
-    <div>
-      {/* <Navbar/> */}
+    <React.Fragment>
+      <Navbar/>
       <Banner/>
-      <RowList title='Top Rated' url={topRated} />
-      <RowList title='Upcoming' url={upComing}  isSmall/>
-    </div>
+      <RowList title='Popular' url={popular}/>
+      <RowList title='Top Rated' url={topRated} isMedium/>
+      <RowList title='Upcoming' url={upComing} isMedium  isSmall/>
+    </React.Fragment>
   );
 }
 

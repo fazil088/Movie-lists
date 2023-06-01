@@ -7,6 +7,7 @@ import { imageUrl } from '../../Constants/constants'
 function RowList(props) {
     const {url} = props
     const [movies,setMovies] = useState([])
+    const [titleName,setTitleName]=useState(null)
     const [youtubeUrl,setYoutubeUrl]=useState('')
     useEffect(()=>{
         instance.get(url).then((response)=>{
@@ -24,6 +25,12 @@ function RowList(props) {
         })
     }
 
+    function closeVideoPlay(){
+        if(youtubeUrl){
+            setYoutubeUrl('')
+        }
+    }
+
     const videoOpt = {
         height : '500px',
         width : '80%',
@@ -32,6 +39,10 @@ function RowList(props) {
         }
     }
 
+
+
+
+
   return (
     <div className='rowMovies'>
         <h2>{props.title}</h2>
@@ -39,12 +50,28 @@ function RowList(props) {
         {
             movies.map((obj,k)=>{
                 return(
-                    <img onClick={()=>{handleVideoPlay(obj.id)}} key={k} className={props.isSmall ? 'rowImgS2' : 'rowImgS1'} src={imageUrl+obj.poster_path} alt="Movie" />
+                    <div className='imagesShow' 
+                    onMouseEnter={(e)=>{
+                        setTitleName(obj.id)
+                    }} onMouseLeave={()=>{
+                        setTitleName(null)
+                    }}
+                     key={k}>
+                        <img
+                         onClick={()=>{handleVideoPlay(obj.id)}}
+                         className={props.isMedium ? (props.isSmall ? 'rowImgS3' : 'rowImgS2') : 'rowImgS1'} src={imageUrl+obj.backdrop_path} alt="Movie" />
+                        <h4 className='titleNames' >{titleName == obj.id ? obj.title : '' }</h4>
+                    </div>
                 )
             })
         }
         </div>
-        {youtubeUrl &&  <Youtube className='playVideo' opts={videoOpt} videoId={youtubeUrl.key}/>}
+        {
+            <div>
+                {youtubeUrl && <i className='fa-solid fa-xmark' onClick={closeVideoPlay} ></i>}
+                {youtubeUrl &&  <Youtube className='playVideo' opts={videoOpt} videoId={youtubeUrl.key}/>}
+            </div>
+        }
     </div>
   )
 }

@@ -5,4 +5,9 @@
 
 body{
     background-color: #1e1e1e;
+    overflow-x: hidden;
+}
+
+#root{
+    position: relative;
 }

@@ -1,9 +1,29 @@
 .navbar{
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 1rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 39, 39, 0.90);
+    padding: 0.7rem;
     position: fixed;
     width: 100%;
     z-index: 99;
+    height: 40px;
+}
+.logo_section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+ 
+.logo_name{
+    display: block;
+    font-weight: 900;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
