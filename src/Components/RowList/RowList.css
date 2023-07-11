@@ -17,7 +17,7 @@
 .rowImgS3{
     cursor: pointer;
     height: 300px;
-    width: 450px;
+    width: 300px;
     margin: 1rem;
     transition: all 0.5s;
     display: block;
@@ -26,12 +26,12 @@
 
 .rowImgS2{
     height: 250px;
-    width: 400px;
+    width: 250px;
 }
 
 .rowImgS3{
     height: 200px;
-    width: 300px;
+    width: 200px;
 }
 
 .rowImgS1:hover,
