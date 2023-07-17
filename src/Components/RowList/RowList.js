@@ -1,3 +1,14 @@
+/**
+ * The `RowList` component is a React functional component that displays a list of movies with their
+ * details and allows the user to play the trailer of a selected movie.
+ * @param props - The `props` parameter in the `RowList` component is an object that contains the
+ * properties passed to the component when it is used. These properties can be accessed using dot
+ * notation, such as `props.title` and `props.url`.
+ * @returns The component `RowList` is returning a JSX structure. It consists of a `div` with class
+ * `rowMovies`, containing a `h2` element with class `title` and a `div` with class `rowList`. Inside
+ * the `rowList` div, there is a mapping of the `movies` array, where each movie object is rendered as
+ * a `div` with class
+ */
 import React,{useState,useEffect} from 'react';
 import Youtube from 'react-youtube'
 import './RowList.css'

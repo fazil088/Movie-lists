@@ -1,3 +1,4 @@
+/* The code block you provided is defining several constants in JavaScript. */
 
 export const baseUrl = "https://api.themoviedb.org/3/";
 

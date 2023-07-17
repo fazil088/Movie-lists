@@ -1,3 +1,9 @@
+/**
+ * The Banner component is a React functional component that displays a random movie as a banner with a
+ * title, description, and buttons.
+ * @returns The component is returning a div with a background image, a title, a description, and two
+ * buttons.
+ */
 import React,{useState,useEffect} from 'react'
 import './Banner.css'
 import axios from '../../axios'
