@@ -11,8 +11,8 @@ function App() {
       <Navbar/>
       <Banner/>
       <RowList title='Popular' url={popular}/>
-      <RowList title='Top Rated' url={topRated} isMedium/>
-      <RowList title='Upcoming' url={upComing} isMedium  isSmall/>
+      <RowList title='Top Rated' url={topRated}/>
+      <RowList title='Upcoming' url={upComing}/>
     </React.Fragment>
   );
 }

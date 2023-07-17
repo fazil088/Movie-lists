@@ -11,7 +11,8 @@
 }
 
 .content{
-    padding-left: 2rem;
+    padding: 2rem;
+    background:  #1f3d4738;
 }
 
 .description{

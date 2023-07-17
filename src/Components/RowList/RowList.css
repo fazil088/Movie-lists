@@ -1,71 +1,88 @@
 .rowMovies{
     color: #fff;
     padding: 1rem;
+    position: relative;
 }
 .rowList{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
+    gap: 2rem;
 }
 
 .rowList::-webkit-scrollbar{
     display: none;
 }
 
-.rowImgS1,
-.rowImgS2,
-.rowImgS3{
-    cursor: pointer;
-    height: 300px;
-    width: 300px;
-    margin: 1rem;
-    transition: all 0.5s;
-    display: block;
-    border-radius: 5px;
-}
-
-.rowImgS2{
-    height: 250px;
-    width: 250px;
-}
-
-.rowImgS3{
-    height: 200px;
-    width: 200px;
-}
-
-.rowImgS1:hover,
-.rowImgS2:hover,
-.rowImgS3:hover{
-    transform: scale(1.1);
+.title{
+    margin-bottom: 2rem;
 }
 
 .imagesShow{
     position: relative;
-    display: inline-block;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
 }
 
-
-.titleNames{
-    position: absolute;
-    width: 90%;
-    top: 91%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    background-image: linear-gradient(180deg,transparent,rgba(39,39,39,0.65),#111);
-    cursor: pointer;
+.movie-image{
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.playVideo{
+.movie-overview{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+.movie-overview h4,p{
+    margin-left: 1rem;
+}
+
+.trailerBtn{
+    padding: 0.5rem;
+    width: 100px;
+    font-size: 0.9rem;
+    background: #1f3d475c;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.trailerBtn:hover{
+    background: #fff;
+    color: #000;
+}
+
+.imagesShow:hover .movie-overview{
+    opacity: 1;
+    visibility: visible;
+    transform-origin: top;
+}
+
+.playTrailer{
+    margin-top: 2rem;
 }
 
 .fa-xmark{
     font-size: 2rem;
     float: right;
-    margin-right: 5rem;
-    cursor: pointer;
 }

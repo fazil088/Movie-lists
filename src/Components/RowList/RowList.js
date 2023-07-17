@@ -38,13 +38,13 @@ function RowList(props) {
         }
     }
 
-
+console.log(movies)
 
 
 
   return (
     <div className='rowMovies'>
-        <h2>{props.title}</h2>
+        <h2 className='title'>{props.title}</h2>
         <div className="rowList">
         {
             movies.map((obj,k)=>{
@@ -52,21 +52,26 @@ function RowList(props) {
                     <div className='imagesShow'
                      key={k}>
                         <img
-                         onClick={()=>{handleVideoPlay(obj.id)}}
-                         className={props.isMedium ? (props.isSmall ? 'rowImgS3' : 'rowImgS2') : 'rowImgS1'} src={imageUrl+obj.poster_path} alt="Movie" />
+                            className='movie-image'
+                            src={imageUrl+obj.poster_path} alt="Movie" 
+                        />
+                        <div className='movie-overview'>
+                            <h4>{obj.title}</h4>
+                            <p>Release Date : {obj.release_date}</p>
+                            <p>Vote Average : {obj.vote_average}</p>
+                            <button className='trailerBtn' onClick={()=>{handleVideoPlay(obj.id)}}>Trailer</button>
+                        </div>
                     </div>
                 )
             })
         }
         </div>
-        {
-            <div>
-                {youtubeUrl && <i className='fa-solid fa-xmark' onClick={closeVideoPlay} ></i>}
-                {youtubeUrl &&  <Youtube className='playVideo' opts={videoOpt} videoId={youtubeUrl.key}/>}
-            </div>
-        }
+        <div className='playTrailer'>
+            {youtubeUrl && <i className='fa-solid fa-xmark' onClick={closeVideoPlay} ></i>}
+            {youtubeUrl &&  <Youtube className='youtubeVideo'  opts={videoOpt} videoId={youtubeUrl.key}/>}
+        </div>
     </div>
   )
 }
 
-export default RowList
+export default RowList;

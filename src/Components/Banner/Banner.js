@@ -20,14 +20,14 @@ function Banner() {
         }
       }
       bannerUpdate();
-      const interval = setInterval(bannerUpdate,60000)
+      const interval = setInterval(bannerUpdate,30000)
       return ()=> clearInterval(interval)
     },[])
 
     
   return (
     <div 
-    style={{backgroundImage: `url(${movies ? imageUrl+movies.backdrop_path : ""})`}}
+    style={{backgroundImage: `url(${movies ? imageUrl+movies.backdrop_path : ""})`,objectFit:'cover'}}
     className='banner'>
       <div className="content">
         <h2 className='title'>{movies ? movies.title : ""}</h2>
