@@ -38,10 +38,6 @@ function RowList(props) {
         }
     }
 
-console.log(movies)
-
-
-
   return (
     <div className='rowMovies'>
         <h2 className='title'>{props.title}</h2>
